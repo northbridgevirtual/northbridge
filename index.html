@@ -14,6 +14,7 @@
     :root {
       --navy: #0A2540;
       --teal: #00A8B5;
+      --teal-light: #E6F7F8;
       --bg-cream: #F5F4EE;
       --card-bg: #FFFFFF;
       --text-dark: #1A202C;
@@ -26,6 +27,10 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -53,19 +58,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
     }
 
-    /* LOGO MÁS GRANDE */
+    /* LOGO NOTABLEMENTE MÁS GRANDE */
     .logo-container img {
-      height: 95px;
+      height: 140px;
       width: auto;
       display: block;
+      object-fit: contain;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      gap: 20px;
       align-items: center;
     }
 
@@ -78,16 +84,11 @@
       text-transform: uppercase;
       position: relative;
       padding-bottom: 4px;
+      transition: color 0.2s;
     }
 
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--teal);
+    .nav-links a:hover {
+      color: var(--teal);
     }
 
     .lang-btn {
@@ -138,6 +139,23 @@
       color: var(--text-muted);
       line-height: 1.5;
       max-width: 480px;
+      margin-bottom: 25px;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--navy);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--teal);
     }
 
     .hero-illustration {
@@ -146,7 +164,6 @@
       justify-content: flex-end;
     }
 
-    /* ILUSTRACIÓN DE LA N MÁS GRANDE */
     .hero-illustration img {
       max-width: 100%;
       height: auto;
@@ -158,12 +175,13 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+      margin-bottom: 60px;
     }
 
     .service-card {
       background-color: var(--card-bg);
       border-radius: 16px;
-      padding: 35px 15px;
+      padding: 30px 18px;
       text-align: center;
       box-shadow: var(--shadow-soft);
       display: flex;
@@ -171,6 +189,9 @@
       align-items: center;
       justify-content: flex-start;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
     .service-card:hover {
@@ -178,21 +199,14 @@
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
 
-    /* ICONOS E IMÁGENES DE LAS TARJETAS MÁS GRANDES */
     .card-icon {
-      font-size: 4.5rem;
+      font-size: 3.8rem;
       color: var(--teal);
-      margin-bottom: 20px;
-      height: 85px;
+      margin-bottom: 15px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .card-icon img {
-      height: 85px;
-      width: auto;
-      object-fit: contain;
     }
 
     .card-title {
@@ -202,6 +216,99 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Detailed Sections */
+    .section-block {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-soft);
+      scroll-margin-top: 20px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--teal-light);
+      padding-bottom: 10px;
+    }
+
+    .details-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .detail-item h4 {
+      color: var(--navy);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-item h4 i {
+      color: var(--teal);
+    }
+
+    .detail-item p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .testimonial-card {
+      background: var(--bg-cream);
+      border-left: 4px solid var(--teal);
+      padding: 20px;
+      border-radius: 8px;
+      font-style: italic;
+      color: var(--text-dark);
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: var(--navy);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 16px;
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--teal-light);
+      margin-bottom: 20px;
+    }
+
+    .contact-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--teal);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 700;
     }
 
     /* Language Switch Logic */
@@ -213,32 +320,34 @@
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-illustration { justify-content: center; margin-top: 20px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-text p { margin: 0 auto; }
+      .details-list { grid-template-columns: 1fr; }
+      .hero-text p { margin: 0 auto 25px; }
       .main-canvas { padding: 30px 20px; }
-      .nav-links { display: none; }
+      .logo-container img { height: 100px; }
     }
 
     @media (max-width: 550px) {
       .services-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div class="main-canvas">
+  <div class="main-canvas" id="home">
     
     <!-- HEADER -->
     <header>
       <div class="logo-container">
-        <img src="logo.png" alt="NorthBridge Support Services" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x90?text=NORTHBRIDGE';">
+        <img src="logo.png" alt="NorthBridge Support Services" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x140?text=NORTHBRIDGE';">
       </div>
       
       <nav class="nav-links">
-        <a href="#" class="active">Home</a>
-        <a href="#">Services</a>
-        <a href="#">About Us</a>
-        <a href="#">Testimonials</a>
-        <a href="mailto:northbridge.virtual@gmail.com">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
         
         <div style="margin-left: 10px;">
           <button class="lang-btn active" onclick="switchLang('en')">EN</button>
@@ -255,11 +364,13 @@
         <div class="lang-block active" id="hero-en">
           <h1>Your Reliable Bridge<br>to Business Success</h1>
           <p>Integrated virtual operations and dedicated support tailored to growing businesses.</p>
+          <a href="mailto:northbridge.virtual@gmail.com" class="btn-cta">Get in Touch</a>
         </div>
         
         <div class="lang-block" id="hero-es">
           <h1>Su Puente Confiable<br>al Éxito Empresarial</h1>
           <p>Operaciones virtuales integradas y soporte dedicado diseñado para empresas en crecimiento.</p>
+          <a href="mailto:northbridge.virtual@gmail.com" class="btn-cta">Contáctenos</a>
         </div>
       </div>
 
@@ -268,53 +379,156 @@
       </div>
     </section>
 
-    <!-- 4 SERVICES GRID -->
+    <!-- 4 SERVICES QUICK GRID -->
     <section class="services-grid">
       
       <!-- Card 1 -->
-      <div class="service-card">
+      <a href="#services" class="service-card">
         <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
         <div class="lang-block active" id="c1-en">
           <div class="card-title">1. Pre-Payroll &<br>HR Support</div>
+          <p class="card-desc">Time tracking, vacation audits, and payroll pre-approvals.</p>
         </div>
         <div class="lang-block" id="c1-es">
           <div class="card-title">1. Pre-Nómina y<br>Soporte de RRHH</div>
+          <p class="card-desc">Registro de horas, control de vacaciones y pre-aprobación de nómina.</p>
         </div>
-      </div>
+      </a>
 
       <!-- Card 2 -->
-      <div class="service-card">
+      <a href="#services" class="service-card">
         <div class="card-icon"><i class="fas fa-headset"></i></div>
         <div class="lang-block active" id="c2-en">
           <div class="card-title">2. Bilingual<br>Operations</div>
+          <p class="card-desc">Seamless coordination between US teams and LatAm talent.</p>
         </div>
         <div class="lang-block" id="c2-es">
           <div class="card-title">2. Operaciones<br>Bilingües</div>
+          <p class="card-desc">Coordinación fluida entre equipos de EE. UU. y personal de LATAM.</p>
         </div>
-      </div>
+      </a>
 
       <!-- Card 3 -->
-      <div class="service-card">
+      <a href="#services" class="service-card">
         <div class="card-icon"><i class="fas fa-database"></i></div>
         <div class="lang-block active" id="c3-en">
           <div class="card-title">3. Data Entry &<br>Management</div>
+          <p class="card-desc">Accurate documentation, CRM records, and data maintenance.</p>
         </div>
         <div class="lang-block" id="c3-es">
           <div class="card-title">3. Ingreso de Datos<br>y Gestión</div>
+          <p class="card-desc">Documentación precisa, actualización de CRM y bases de datos.</p>
         </div>
-      </div>
+      </a>
 
       <!-- Card 4 -->
-      <div class="service-card">
+      <a href="#services" class="service-card">
         <div class="card-icon"><i class="fas fa-handshake"></i></div>
         <div class="lang-block active" id="c4-en">
           <div class="card-title">4. General Admin &<br>Virtual Support</div>
+          <p class="card-desc">Workflow organization, inbox management, and operational tasks.</p>
         </div>
         <div class="lang-block" id="c4-es">
           <div class="card-title">4. Admin General y<br>Soporte Virtual</div>
+          <p class="card-desc">Gestión de flujo de trabajo, organización de correos y procesos.</p>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- DETAILED SERVICES SECTION -->
+    <section class="section-block" id="services">
+      <div class="lang-block active" id="serv-det-en">
+        <h2 class="section-title">Our Services in Detail</h2>
+        <div class="details-list">
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Pre-Payroll & Time Tracking</h4>
+            <p>We review hours worked, manage vacation requests, and consolidate operational data so your payroll process runs smoothly without errors or delays.</p>
+          </div>
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Bilingual Operations Support</h4>
+            <p>Bridge the gap between teams. We provide English-Spanish coordination for clear task management across distributed remote talent.</p>
+          </div>
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Data Entry & Record Keeping</h4>
+            <p>Maintain organized, up-to-date business records. We manage software entries, update system databases, and keep administrative logs clean.</p>
+          </div>
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> General Virtual Assistance</h4>
+            <p>Free up executive bandwidth. We handle inbox filtering, scheduling, vendor coordination, and structured daily administrative checklists.</p>
+          </div>
         </div>
       </div>
 
+      <div class="lang-block" id="serv-det-es">
+        <h2 class="section-title">Nuestros Servicios al Detalle</h2>
+        <div class="details-list">
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Pre-Nómina y Registro de Horas</h4>
+            <p>Revisamos horas trabajadas, gestionamos vacaciones y consolidamos datos operativos para que el proceso de pago funcione sin errores ni retrasos.</p>
+          </div>
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Soporte Operativo Bilingüe</h4>
+            <p>Conecte sus equipos. Brindamos coordinación Inglés-Español para una gestión clara de tareas entre personal remoto distribuido.</p>
+          </div>
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Ingreso de Datos y Registros</h4>
+            <p>Mantenga sus archivos empresariales organizados y actualizados. Gestionamos plataformas, CRM y registros administrativos.</p>
+          </div>
+          <div class="detail-item">
+            <h4><i class="fas fa-check-circle"></i> Asistencia Virtual General</h4>
+            <p>Libere tiempo ejecutivo. Gestionamos correo electrónico, agenda, coordinación con proveedores y tareas administrativas diarias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="section-block" id="about">
+      <div class="lang-block active" id="about-det-en">
+        <h2 class="section-title">About NorthBridge Support Services</h2>
+        <p>NorthBridge connects businesses to reliable back-office solutions. We act as an extension of your internal team, providing structured virtual operations, precise pre-payroll tracking, and dependable bilingual administrative support. Our mission is to help companies reduce operational friction and scale with clarity.</p>
+      </div>
+      <div class="lang-block" id="about-det-es">
+        <h2 class="section-title">Sobre NorthBridge Support Services</h2>
+        <p>NorthBridge conecta empresas con soluciones de soporte operativo confiables. Actuamos como una extensión de su equipo interno, brindando operaciones virtuales estructuradas, seguimiento preciso de pre-nómina y soporte administrativo bilingüe. Nuestra misión es ayudar a las empresas a reducir fricciones operativas y crecer con claridad.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section-block" id="testimonials">
+      <div class="lang-block active" id="test-det-en">
+        <h2 class="section-title">Client Feedback</h2>
+        <div class="testimonial-card">
+          <p>"NorthBridge transformed our back-office routine. Their pre-payroll organization and attention to operational details saved us hours every single week."</p>
+          <p style="margin-top: 10px; font-weight: 700; font-style: normal; font-size: 0.85rem; color: var(--navy);">- Operations Director, Growing Enterprise</p>
+        </div>
+      </div>
+      <div class="lang-block" id="test-det-es">
+        <h2 class="section-title">Testimonios</h2>
+        <div class="testimonial-card">
+          <p>"NorthBridge transformó nuestra rutina administrativa. Su organización en la pre-nómina y atención a los detalles operativos nos ahorra horas todas las semanas."</p>
+          <p style="margin-top: 10px; font-weight: 700; font-style: normal; font-size: 0.85rem; color: var(--navy);">- Director de Operaciones, Empresa en Crecimiento</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-card" id="contact">
+      <div class="lang-block active" id="contact-det-en">
+        <h3>Ready to Work Together?</h3>
+        <p>Contact us to discuss tailored administrative support for your business.</p>
+        <a href="mailto:northbridge.virtual@gmail.com" class="contact-email-btn">
+          <i class="fas fa-envelope"></i> northbridge.virtual@gmail.com
+        </a>
+      </div>
+      <div class="lang-block" id="contact-det-es">
+        <h3>¿Listos para Trabajar Juntos?</h3>
+        <p>Contáctenos para coordinar soporte administrativo a la medida de su empresa.</p>
+        <a href="mailto:northbridge.virtual@gmail.com" class="contact-email-btn">
+          <i class="fas fa-envelope"></i> northbridge.virtual@gmail.com
+        </a>
+      </div>
     </section>
 
   </div>
@@ -325,10 +539,10 @@
       document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
       
       if (lang === 'en') {
-        document.querySelectorAll('#hero-en, #c1-en, #c2-en, #c3-en, #c4-en').forEach(el => el.classList.add('active'));
+        document.querySelectorAll('#hero-en, #c1-en, #c2-en, #c3-en, #c4-en, #serv-det-en, #about-det-en, #test-det-en, #contact-det-en').forEach(el => el.classList.add('active'));
         document.querySelectorAll('.lang-btn')[0].classList.add('active');
       } else {
-        document.querySelectorAll('#hero-es, #c1-es, #c2-es, #c3-es, #c4-es').forEach(el => el.classList.add('active'));
+        document.querySelectorAll('#hero-es, #c1-es, #c2-es, #c3-es, #c4-es, #serv-det-es, #about-det-es, #test-det-es, #contact-det-es').forEach(el => el.classList.add('active'));
         document.querySelectorAll('.lang-btn')[1].classList.add('active');
       }
     }
