@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North Bridge Business Support | Virtual Operations & HR</title>
+  <title>North Bridge Support Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #1E293B;
-      --accent: #2563EB;
-      --bg: #F8FAFC;
-      --card-bg: #FFFFFF;
-      --text: #334155;
-      --light-text: #64748B;
+      --navy: #0A2540;
+      --teal: #00A8B5;
+      --teal-light: #E6F7F8;
+      --bg-cream: #FAF9F6;
+      --white: #FFFFFF;
+      --text-dark: #2C3E50;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -22,190 +26,491 @@
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 20px;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.5;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 20px;
     }
 
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      margin-bottom: 24px;
+    /* Top Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0 30px;
     }
 
-    h1 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-    }
-
-    .lang-toggle {
-      display: inline-block;
-      margin-top: 10px;
+    .lang-switcher {
+      display: flex;
+      gap: 5px;
     }
 
     .lang-btn {
-      background: #E2E8F0;
-      border: none;
+      background: var(--white);
+      border: 1px solid var(--border-color);
       padding: 6px 12px;
       border-radius: 6px;
-      font-weight: bold;
+      font-weight: 600;
       cursor: pointer;
-      color: var(--primary);
+      color: var(--text-muted);
     }
 
     .lang-btn.active {
-      background: var(--accent);
-      color: white;
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
     }
 
-    .card {
-      background: var(--card-bg);
-      padding: 30px;
+    /* Header & Hero */
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .brand-title {
+      font-size: 2.8rem;
+      color: var(--navy);
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .brand-tagline {
+      font-size: 1.25rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin: 15px 0 10px;
+    }
+
+    .brand-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      background: var(--white);
+      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
     }
 
-    h2 {
-      color: var(--primary);
-      font-size: 1.3rem;
-      margin-bottom: 16px;
-      border-bottom: 2px solid #F1F5F9;
-      padding-bottom: 8px;
+    .benefit-item {
+      text-align: center;
+      padding: 10px;
     }
 
-    ul {
-      list-style-type: none;
+    .benefit-icon {
+      font-size: 1.8rem;
+      color: var(--teal);
+      margin-bottom: 8px;
     }
 
-    li {
-      margin-bottom: 12px;
+    .benefit-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .benefit-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Title */
+    .section-divider {
+      text-align: center;
       position: relative;
-      padding-left: 24px;
+      margin: 40px 0;
     }
 
-    li::before {
+    .section-divider h2 {
+      display: inline-block;
+      background: var(--bg-cream);
+      padding: 0 20px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-divider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--teal);
+      z-index: 0;
+    }
+
+    /* Packages Grid */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .package-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .package-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--teal);
+    }
+
+    .badge-core {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom-right-radius: 8px;
+      text-transform: uppercase;
+    }
+
+    .card-icon {
+      text-align: center;
+      padding: 25px 15px 10px;
+      font-size: 2rem;
+      color: var(--teal);
+    }
+
+    .card-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      min-height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-body {
+      padding: 15px 12px;
+      flex-grow: 1;
+    }
+
+    .card-body ul {
+      list-style: none;
+    }
+
+    .card-body li {
+      font-size: 0.8rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .card-body li::before {
       content: "✓";
       position: absolute;
       left: 0;
-      color: var(--accent);
+      color: var(--teal);
       font-weight: bold;
     }
 
-    .contact-btn {
-      display: block;
-      width: 100%;
+    .card-footer {
+      padding: 12px;
       text-align: center;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      padding: 14px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.1rem;
+      border-top: 1px dashed var(--border-color);
+      background: #FAFAFA;
+    }
+
+    .price {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .hours {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Bottom Banner */
+    .bottom-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
       margin-top: 20px;
     }
 
-    .lang-block {
-      display: none;
+    .info-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .lang-block.active {
+    .info-icon {
+      font-size: 1.8rem;
+      color: var(--teal);
+    }
+
+    .info-text h4 {
+      font-size: 0.75rem;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .info-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .cta-btn {
       display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--teal);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      margin-top: 30px;
+      transition: background 0.2s;
     }
 
-    footer {
-      text-align: center;
-      color: var(--light-text);
-      font-size: 0.85rem;
-      margin-top: 40px;
+    .cta-btn:hover {
+      background: #008C96;
+    }
+
+    /* Language Toggle Visibility */
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      header { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid { grid-template-columns: 1fr; }
+      .bottom-info { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    
-    <!-- Header -->
-    <header>
-      <h1>North Bridge Business Support</h1>
-      <p class="subtitle" id="tagline-en">Reliable Virtual Operations, Payroll & Administrative Support</p>
-      <p class="subtitle lang-block" id="tagline-es">Soporte Virtual Operativo, Pre-Nómina y Administrativo</p>
-      
-      <div class="lang-toggle">
+    <nav>
+      <div style="font-weight: 800; color: var(--navy);">NORTHBRIDGE</div>
+      <div class="lang-switcher">
         <button class="lang-btn active" onclick="switchLang('en')">EN</button>
         <button class="lang-btn" onclick="switchLang('es')">ES</button>
       </div>
+    </nav>
+
+    <!-- HEADER SECTION -->
+    <header>
+      <div>
+        <h1 class="brand-title">NorthBridge Support Services</h1>
+        <div class="lang-block active" id="hero-en">
+          <p class="brand-tagline">Connecting Businesses to Success</p>
+          <p class="brand-desc">Integrated virtual operations and dedicated support tailored to help your business run smoother, save time, and grow with confidence.</p>
+        </div>
+        <div class="lang-block" id="hero-es">
+          <p class="brand-tagline">Conectando Empresas con el Éxito</p>
+          <p class="brand-desc">Operaciones virtuales integradas y soporte dedicado diseñado para ayudar a que su empresa funcione mejor, ahorre tiempo y crezca con confianza.</p>
+        </div>
+      </div>
+
+      <!-- BENEFITS BAR -->
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <i class="fas fa-clock benefit-icon"></i>
+          <div class="benefit-title lang-block active" id="b1-en">Save Time</div>
+          <div class="benefit-title lang-block" id="b1-es">Ahorra Tiempo</div>
+          <p class="benefit-desc lang-block active" id="b1-desc-en">We handle details so you focus on growth.</p>
+          <p class="benefit-desc lang-block" id="b1-desc-es">Nos encargamos de los detalles para que crezcas.</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-shield-alt benefit-icon"></i>
+          <div class="benefit-title lang-block active" id="b2-en">Reliable</div>
+          <div class="benefit-title lang-block" id="b2-es">Confiable</div>
+          <p class="benefit-desc lang-block active" id="b2-desc-en">Consistent, accurate & professional.</p>
+          <p class="benefit-desc lang-block" id="b2-desc-es">Servicio consistente, preciso y profesional.</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-chart-line benefit-icon"></i>
+          <div class="benefit-title lang-block active" id="b3-en">Efficiency</div>
+          <div class="benefit-title lang-block" id="b3-es">Eficiencia</div>
+          <p class="benefit-desc lang-block active" id="b3-desc-en">Streamlined operational processes.</p>
+          <p class="benefit-desc lang-block" id="b3-desc-es">Procesos operativos optimizados.</p>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-users benefit-icon"></i>
+          <div class="benefit-title lang-block active" id="b4-en">Scalable</div>
+          <div class="benefit-title lang-block" id="b4-es">Escalable</div>
+          <p class="benefit-desc lang-block active" id="b4-desc-en">Flexible support that grows with you.</p>
+          <p class="benefit-desc lang-block" id="b4-desc-es">Soporte flexible que crece contigo.</p>
+        </div>
+      </div>
     </header>
 
-    <!-- ENGLISH CONTENT -->
-    <div id="content-en" class="lang-block active">
-      <div class="card">
-        <h2>About Us</h2>
-        <p>We provide accurate, structured, and remote administrative support for growing businesses. We help business owners streamline daily operations, keep time-tracking accurate, and maintain seamless communication.</p>
+    <!-- SECTION TITLE -->
+    <div class="section-divider">
+      <h2 class="lang-block active" id="title-en">Our Packages & Services</h2>
+      <h2 class="lang-block" id="title-es">Nuestros Paquetes y Servicios</h2>
+    </div>
+
+    <!-- PACKAGES GRID -->
+    <div class="packages-grid">
+      
+      <!-- CORE PACKAGE -->
+      <div class="package-card featured">
+        <span class="badge-core">Core Package</span>
+        <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="card-header">Core Operations & Back Office</div>
+        <div class="card-body">
+          <ul>
+            <li>Calendar management</li>
+            <li>Inbox Zero</li>
+            <li>Process tracking</li>
+            <li>General virtual support</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">USD $2,000 / mo</div>
+          <div class="hours">≈10 hrs / week</div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>Core Services</h2>
-        <ul>
-          <li><strong>Pre-Payroll & Time Tracking:</strong> Reviewing staff hours, vacation records, and preparing clean data for payment approval.</li>
-          <li><strong>Bilingual Operations Support:</strong> Clear communication and coordination between US-based teams and remote Latin American talent.</li>
-          <li><strong>Data Entry & Record Keeping:</strong> Organizing operational documentation and maintaining updated software records.</li>
-          <li><strong>General Administrative Assistance:</strong> Workflow management, inbox organization, and process tracking.</li>
-        </ul>
+      <!-- ADD-ON 1 -->
+      <div class="package-card">
+        <div class="card-icon"><i class="fas fa-user-clock"></i></div>
+        <div class="card-header">Add-on: Pre-Payroll & Time Tracking</div>
+        <div class="card-body">
+          <ul>
+            <li>Weekly timecard audits</li>
+            <li>Vacation/PTO logs</li>
+            <li>Payment file preparation</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">+ USD $600 / mo</div>
+          <div class="hours">≈3 hrs / week</div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>Contact Us</h2>
-        <p>Ready to delegate operational tasks and scale your business?</p>
-        <a href="mailto:northbridge.virtual@gmail.com" class="contact-btn">Send Us an Email</a>
+      <!-- ADD-ON 2 -->
+      <div class="package-card">
+        <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <div class="card-header">Add-on: Financial & Invoicing Support</div>
+        <div class="card-body">
+          <ul>
+            <li>Data entry in accounting software</li>
+            <li>Basic reconciliation</li>
+            <li>Invoice generation</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">+ USD $600 / mo</div>
+          <div class="hours">≈3 hrs / week</div>
+        </div>
+      </div>
+
+      <!-- ADD-ON 3 -->
+      <div class="package-card">
+        <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="card-header">Add-on: Accounts Receivable & Collections</div>
+        <div class="card-body">
+          <ul>
+            <li>Overdue invoice tracking</li>
+            <li>Payment follow-ups</li>
+            <li>Collection communications</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">+ USD $800 / mo</div>
+          <div class="hours">≈4 hrs / week</div>
+        </div>
+      </div>
+
+      <!-- ADD-ON 4 -->
+      <div class="package-card">
+        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <div class="card-header">Add-on: Bilingual Operations Bridge</div>
+        <div class="card-body">
+          <ul>
+            <li>Cross-border team communication (US/Canada/LatAm)</li>
+            <li>Document & email support in EN / ES</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <div class="price">+ USD $500 / mo</div>
+          <div class="hours">≈2 hrs / week</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM INFO & NOTES -->
+    <div class="bottom-info">
+      <div class="info-box">
+        <i class="fas fa-info-circle info-icon"></i>
+        <div class="info-text">
+          <h4>Notes</h4>
+          <p>All prices are estimated monthly fees and can be customized based on operational needs and scope of work.</p>
+        </div>
+      </div>
+      <div class="info-box">
+        <i class="fas fa-headset info-icon"></i>
+        <div class="info-text">
+          <h4>Flexible. Reliable. Dedicated.</h4>
+          <p>Let us be the bridge that supports your business every day.</p>
+        </div>
       </div>
     </div>
 
-    <!-- SPANISH CONTENT -->
-    <div id="content-es" class="lang-block">
-      <div class="card">
-        <h2>Sobre Nosotros</h2>
-        <p>Brindamos soporte administrativo remoto, estructurado y preciso para empresas en crecimiento. Ayudamos a optimizar operaciones diarias, coordinar equipos y mantener datos limpios en sus sistemas.</p>
-      </div>
-
-      <div class="card">
-        <h2>Servicios Principales</h2>
-        <ul>
-          <li><strong>Pre-Nómina y Registro de Horas:</strong> Revisión de horarios del personal, registros de vacaciones y preparación de datos para aprobación de pagos.</li>
-          <li><strong>Soporte Operativo Bilingüe:</strong> Comunicación fluida y coordinación entre equipos en EE. UU. y talento remoto en Latinoamérica.</li>
-          <li><strong>Ingreso de Datos y Registro:</strong> Organización de documentación operativa y actualización constante en software.</li>
-          <li><strong>Asistencia Administrativa General:</strong> Gestión de flujos de trabajo, organización de correos y seguimiento de procesos.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Contacto</h2>
-        <p>¿Listo para delegar tareas operativas y optimizar tu tiempo?</p>
-        <a href="mailto:northbridge.virtual@gmail.com" class="contact-btn">Enviar un Correo</a>
-      </div>
-    </div>
-
-    <footer>
-      <p>© 2026 North Bridge Business Support. All rights reserved.</p>
-    </footer>
+    <a href="mailto:northbridge.virtual@gmail.com" class="cta-btn">Request a Consultation</a>
 
   </div>
 
@@ -215,13 +520,11 @@
       document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
       
       if (lang === 'en') {
-        document.getElementById('content-en').classList.add('active');
-        document.getElementById('tagline-en').classList.add('active');
-        event.target.classList.add('active');
+        document.querySelectorAll('#hero-en, #b1-en, #b1-desc-en, #b2-en, #b2-desc-en, #b3-en, #b3-desc-en, #b4-en, #b4-desc-en, #title-en').forEach(el => el.classList.add('active'));
+        document.querySelectorAll('.lang-btn')[0].classList.add('active');
       } else {
-        document.getElementById('content-es').classList.add('active');
-        document.getElementById('tagline-es').classList.add('active');
-        event.target.classList.add('active');
+        document.querySelectorAll('#hero-es, #b1-es, #b1-desc-es, #b2-es, #b2-desc-es, #b3-es, #b3-desc-es, #b4-es, #b4-desc-es, #title-es').forEach(el => el.classList.add('active'));
+        document.querySelectorAll('.lang-btn')[1].classList.add('active');
       }
     }
   </script>
