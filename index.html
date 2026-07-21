@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Bridge Business Support | Virtual Operations & HR</title>
+  <style>
+    :root {
+      --primary: #1E293B;
+      --accent: #2563EB;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #334155;
+      --light-text: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .lang-toggle {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .lang-btn {
+      background: #E2E8F0;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .contact-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .lang-block {
+      display: none;
+    }
+
+    .lang-block.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--light-text);
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <h1>North Bridge Business Support</h1>
+      <p class="subtitle" id="tagline-en">Reliable Virtual Operations, Payroll & Administrative Support</p>
+      <p class="subtitle lang-block" id="tagline-es">Soporte Virtual Operativo, Pre-Nómina y Administrativo</p>
+      
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('es')">ES</button>
+      </div>
+    </header>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en" class="lang-block active">
+      <div class="card">
+        <h2>About Us</h2>
+        <p>We provide accurate, structured, and remote administrative support for growing businesses. We help business owners streamline daily operations, keep time-tracking accurate, and maintain seamless communication.</p>
+      </div>
+
+      <div class="card">
+        <h2>Core Services</h2>
+        <ul>
+          <li><strong>Pre-Payroll & Time Tracking:</strong> Reviewing staff hours, vacation records, and preparing clean data for payment approval.</li>
+          <li><strong>Bilingual Operations Support:</strong> Clear communication and coordination between US-based teams and remote Latin American talent.</li>
+          <li><strong>Data Entry & Record Keeping:</strong> Organizing operational documentation and maintaining updated software records.</li>
+          <li><strong>General Administrative Assistance:</strong> Workflow management, inbox organization, and process tracking.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Contact Us</h2>
+        <p>Ready to delegate operational tasks and scale your business?</p>
+        <a href="mailto:northbridge.virtual@gmail.com" class="contact-btn">Send Us an Email</a>
+      </div>
+    </div>
+
+    <!-- SPANISH CONTENT -->
+    <div id="content-es" class="lang-block">
+      <div class="card">
+        <h2>Sobre Nosotros</h2>
+        <p>Brindamos soporte administrativo remoto, estructurado y preciso para empresas en crecimiento. Ayudamos a optimizar operaciones diarias, coordinar equipos y mantener datos limpios en sus sistemas.</p>
+      </div>
+
+      <div class="card">
+        <h2>Servicios Principales</h2>
+        <ul>
+          <li><strong>Pre-Nómina y Registro de Horas:</strong> Revisión de horarios del personal, registros de vacaciones y preparación de datos para aprobación de pagos.</li>
+          <li><strong>Soporte Operativo Bilingüe:</strong> Comunicación fluida y coordinación entre equipos en EE. UU. y talento remoto en Latinoamérica.</li>
+          <li><strong>Ingreso de Datos y Registro:</strong> Organización de documentación operativa y actualización constante en software.</li>
+          <li><strong>Asistencia Administrativa General:</strong> Gestión de flujos de trabajo, organización de correos y seguimiento de procesos.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Contacto</h2>
+        <p>¿Listo para delegar tareas operativas y optimizar tu tiempo?</p>
+        <a href="mailto:northbridge.virtual@gmail.com" class="contact-btn">Enviar un Correo</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 North Bridge Business Support. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+      
+      if (lang === 'en') {
+        document.getElementById('content-en').classList.add('active');
+        document.getElementById('tagline-en').classList.add('active');
+        event.target.classList.add('active');
+      } else {
+        document.getElementById('content-es').classList.add('active');
+        document.getElementById('tagline-es').classList.add('active');
+        event.target.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
